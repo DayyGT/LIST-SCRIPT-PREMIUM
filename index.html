@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Store</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PROFILE SETTINGGGGGG -->
+<div class="profile-card">
+    <img src="https://cdn.discordapp.com/attachments/988915808723947600/1466125564334047395/file_00000000956071fdb02a687204da3407.png?ex=697b9b55&is=697a49d5&hm=80a0477bcfa7f17595d105ff6fff10ffc2b9fbb2de59947dc38439ee3cc1db4f&" class="profile-avatar">
+
+    <div class="profile-info">
+        <h2>Dayy’s</h2>
+
+        <p class="skills">
+            Penyedia Script yang kamu butuhkan.<br>
+            Pembuat Script Growlauncher, BotHax, GentaHax
+        </p>
+
+        <div class="profile-stats">
+            <div class="stat">
+                Member Discord
+                <span>4.700+</span>
+            </div>
+
+            <div class="stat">
+                Testimoni Pembelian
+                <span>670+</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search-box">
+    <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Cari script..."
+        oninput="filterScripts()"
+    >
+</div>
+
+<div class="container" id="productList">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
