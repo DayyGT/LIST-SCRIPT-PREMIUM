@@ -63,8 +63,8 @@ Auto Hitung Tax Percent
 Otomatis Convert DL ke BGL
 Drop /wl /dl /bgl 
 SEMUA FITUR CEK YOUTUBE AJA!!<br>
-Harga : 25.000
-        `,
+Harga Normal : 25.000
+Harga Diskon : 15.00      `,
         youtubeUrl: "https://youtu.be/sJWrNVomlIw?si=bFFnEDD8-qr7hDqQ",
         popular: true
     },
@@ -96,15 +96,14 @@ Harga : Rp 30.000
         shortDesc: "Semua Server Yang Brighver",
         description: `
         Versi Genta, Bothax, Growlauncher ada
- Memulai Script Pakai Cmd /ex
- Slot 1-17 (Bisa di Tambah)
- Auto Drop Jika 100 Item
+ Bisa semua server Cpp Brighver
+ Bisa Melakukan Exchange Secara Bersamaan 10+ Slot
  No Crash/Forclose/Disconnect
- Mulai ketik /ex 1-17
  SEMUA FITUR CEK YOUTUBE AJA!!<br>
-Harga : Rp 30.000
+Harga Normal : Rp 30.000 ❌
+Harga Diskon : 15.000 ✅
         `,
-        youtubeUrl: "https://youtu.be/j16OW3mdxxw?si=qG57nidFrEL_8RmT",
+        youtubeUrl: "https://youtu.be/9Yo0Bz9Wp9s?si=GOQCdHNlnvXsi8kZ",
         popular: true
     },
             {
