@@ -1069,16 +1069,16 @@ cursor:pointer;
 background:rgba(255,255,255,0.05);
 }
 
-/* ================= MOBILE (HP) ================= */
-
+/*======== MOBILE ========*/
 @media (max-width: 768px){
 
 .container{
-padding:20px 14px;
+padding:24px 14px;
 }
 
 .admin-content{
 padding:20px 14px;
+padding-top:calc(var(--topbar-height) + 20px);
 }
 
 .product-row{
@@ -1132,4 +1132,4 @@ font-size:20px;
 font-size:18px;
 }
 
-  }
+}
