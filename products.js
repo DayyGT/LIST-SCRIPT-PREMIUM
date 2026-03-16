@@ -46,7 +46,7 @@ function renderProducts(products){
 
                   <div class="product-image">
 
-                        <img src="asset/product.png">
+                        <img src="product.png">
 
                         ${badge}
 
