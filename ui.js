@@ -40,7 +40,7 @@ content.innerHTML=`
 
 <div class="detail-head">
 
-<img src="${data.gambar || 'asset/product.png'}" class="detail-img">
+<img src="${data.gambar || 'product.png'}" class="detail-img">
 
 <div class="detail-info">
 
