@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="admin-topbar">
+
+<div class="menu-toggle" onclick="toggleAdminSidebar()">☰</div>
+
+<div class="admin-title">Admin Dashboard</div>
+
+</div>
+
+
+<!-- OVERLAY -->
+<div id="adminOverlay" class="admin-overlay" onclick="toggleAdminSidebar()"></div>
+
+
+<div class="admin-layout">
+
+<!-- SIDEBAR -->
+<div class="admin-sidebar" id="adminSidebar">
+
+<h2 class="admin-logo">Menu</h2>
+
+<div class="admin-menu-item active-menu"
+onclick="showSection('control', this)">
+
+<span>Kontrol Produk</span>
+<span class="menu-arrow">›</span>
+
+</div>
+
+<div class="admin-menu-item"
+onclick="showSection('home', this)">
+
+<span>Beranda (Preview)</span>
+<span class="menu-arrow">›</span>
+
+</div>
+
+<div class="admin-menu-item"
+onclick="showSection('pembelian', this)">
+Pembelian
+<span class="menu-arrow">›</span>
+</div>
+
+<div class="admin-menu-item logout"
+onclick="logoutAdmin()">
+
+<span>Logout</span>
+<span class="menu-arrow">›</span>
+
+</div>
+
+</div>
+
+
+<!-- CONTENT -->
+<div class="admin-content" id="adminContent">
+
+<div class="admin-section" id="section-pembelian">
+<input
+type="text"
+id="searchKontak"
+placeholder="Cari kontak..."
+class="search-box"
+/>
+<h2>Data Pembelian</h2>
+
+<div id="listPembelian"></div>
+
+</div>
+<!-- ================= CONTROL PRODUK ================= -->
+<div id="section-control" class="admin-section active">
+
+
+<!-- FORM TAMBAH PRODUK -->
+<div class="admin-card">
+
+<h2>Tambah Produk</h2>
+
+<div class="form-group">
+<input type="text" id="namaBarang" placeholder="Nama Barang">
+</div>
+
+<div class="form-group">
+<textarea id="deskripsiBarang" placeholder="Deskripsi produk (enter untuk baris baru)"></textarea>
+</div>
+
+<div class="form-group">
+<input type="number" id="hargaBarang" placeholder="Harga (Contoh 20000) Jangan pake .">
+</div>
+
+<div class="form-group">
+<input type="text" id="showcaseLink" placeholder="Link Showcase (YouTube, dll)">
+</div>
+
+
+<div class="switch-wrapper">
+
+<span>Diskon Aktif/Mati</span>
+
+<label class="switch">
+<input type="checkbox" id="diskonAktif" onchange="toggleDiskonInput()">
+<span class="slider"></span>
+</label>
+
+</div>
+
+
+<div id="diskonInputBox">
+
+<input
+type="number"
+id="diskonBarang"
+placeholder="Diskon % (contoh 50)"
+>
+
+</div>
+
+
+<button class="primary-btn"
+onclick="tambahBarang()">
+
+Selesai
+
+</button>
+<div class="section-divider"></div>
+</div>
+
+
+
+<!-- ================= LIST PRODUK ================= -->
+
+<div class="admin-card">
+
+<h2 id="produkTitle">Daftar Produk</h2>
+
+<div id="listBarang" class="product-list"></div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= PREVIEW TOKO ================= -->
+
+<div id="section-home" class="admin-section">
+
+<iframe src="index.html" class="preview-frame"></iframe>
+
+</div>
+
+
+</div>
+</div>
+
+
+
+<!-- ================= EDIT PRODUK MODAL ================= -->
+
+<div id="editModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn"
+onclick="closeEdit()">✕</span>
+
+<h3>Edit Produk</h3>
+
+<input type="text" id="editNama" placeholder="Nama Produk">
+
+<textarea id="editDeskripsi" placeholder="Deskripsi"></textarea>
+
+<input type="number" id="editHarga" placeholder="Harga">
+
+<input type="text" id="editShowcase" placeholder="Link YouTube Showcase">
+
+<input type="number" id="editDiskon" placeholder="Diskon %">
+
+
+<button onclick="saveEdit()" class="primary-btn">
+
+Simpan Perubahan
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= MODAL DESKRIPSI ================= -->
+
+<div id="descModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close-btn"
+onclick="closeDesc()">✕</span>
+
+<h3>Deskripsi Produk</h3>
+
+<p id="descText"></p>
+
+</div>
+
+</div>
+
+
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check-compat.js"></script>
+<!-- ADMIN SCRIPT -->
+<script src="admin.js"></script>
+
+</body>
+</html>

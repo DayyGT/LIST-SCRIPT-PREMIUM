@@ -1,56 +1,757 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dayy Store</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="main.css">
 
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<!-- PROFILE SETTINGGGGGG -->
-<div class="profile-card">
-    <img
-        src="https://raw.githubusercontent.com/DayyGT/LIST-SCRIPT-PREMIUM/main/file_00000000956071fdb02a687204da3407.png"
-        class="profile-avatar">
-    
-    <div class="profile-info">
-        <h2>Dayy’s</h2>
+<!-- ================= SIDEBAR ================= -->
 
-        <p class="skills">
-            Penyedia Script yang kamu butuhkan.<br>
-            Pembuat Script Growlauncher, BotHax, GentaHax
-        </p>
+<div class="sidebar">
 
-        <div class="profile-stats">
-            <div class="stat">
-                Member Discord
-                <span>4.700+</span>
-            </div>
-
-            <div class="stat">
-                Testimoni Pembelian
-                <span>670+</span>
-            </div>
-        </div>
-    </div>
+<div class="sidebar-header">
+<span>Menu</span>
+<button class="sidebar-close" onclick="closeSidebar()">✕</button>
 </div>
+
+<div class="sidebar-menu">
+
+<div class="sidebar-item" onclick="scrollToSection('beranda')">
+Beranda
+<span class="sidebar-arrow">›</span>
+</div>
+
+<div class="sidebar-item" onclick="scrollToSection('produk')">
+Produk
+<span class="sidebar-arrow">›</span>
+</div>
+
+<div class="sidebar-item" onclick="scrollToSection('service')">
+Service
+<span class="sidebar-arrow">›</span>
+</div>
+
+<div class="sidebar-item" onclick="scrollToSection('faq')">
+FAQ
+<span class="sidebar-arrow">›</span>
+</div>
+
+</div>
+
+<button class="sidebar-btn" onclick="openLogin()">
+Login
+</button>
+
+</div>
+
+
+<!-- ================= OVERLAY ================= -->
+
+<div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+
+<!-- ================= BERANDA / HERO ================= -->
+
+<div id="beranda">
+
+<!-- ================= TOPBAR ================= -->
+
+<div class="topbar-wrapper">
+
+<div class="topbar">
+
+<div class="topbar-inner">
+
+<div class="logo-area">
+<img class="logo-img" src="asset/logo.png">
+<span class="logo-text">Dayy's Store</span>
+</div>
+
+<div class="menu-btn" onclick="openSidebar()">
+<div class="menu-line"></div>
+<div class="menu-line"></div>
+<div class="menu-line"></div>
+</div>
+
+</div>
+
 
 <div class="search-box">
-    <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Cari script..."
-        oninput="filterScripts()"
-    >
+
+<svg class="search-icon"
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke="white">
+<path stroke-linecap="round"
+stroke-linejoin="round"
+stroke-width="2"
+d="M21 21l-4.35-4.35m1.6-5.4a7 7 0 11-14 0 7 7 0 0114 0z"/>
+</svg>
+
+<input
+type="text"
+class="search-input"
+placeholder="Cari produk..."
+id="searchInput">
+
+<button id="clearSearch" class="search-clear">
+✕
+</button>
+
 </div>
 
-<div class="container" id="productList">
 </div>
 
-<script src="script.js"></script>
+</div>
+
+</div>
+
+<!-- ================= HERO BERANDA ================= -->
+
+<section class="hero" id="heroSection">
+
+<div class="hero-card">
+
+<div class="hero-badge">
+<span class="dot"></span>
+ Toko Script Premium • Murah & Garansi
+</div>
+
+<h1 class="hero-title">
+Script Premium
+</h1>
+
+<p class="hero-desc">
+Pilih produk → isi format → lanjut pembayaran QRIS
+→ konfirmasi sudah bayar → kirim → Chat admin.
+</p>
+
+<div class="hero-stats">
+
+<div>
+<h3>1K+</h3>
+<span>ORDER SELESAI</span>
+</div>
+
+<div>
+<h3>2 Menit</h3>
+<span>RATA-RATA PROSES</span>
+</div>
+
+<div>
+<h3>99%</h3>
+<span>KEPUASAN</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-apps">
+
+<span>GROWLAUNCHER</span>
+<span>GENTAHAX</span>
+<span>BOTHAX</span>
+<span>GROWPAI</span>
+
+</div>
+
+<div class="running-text">
+
+<div class="running-track">
+
+<span>
+⚡ TOKO AMANAH DENGAN BERAGAM SCRIPT • FAST RESPON • SUPPORT 24 JAM •
+</span>
+<span>
+⚡ TOKO AMANAH DENGAN BERAGAM SCRIPT • FAST RESPON • SUPPORT 24 JAM •
+</span>
+<span>
+⚡ TOKO AMANAH DENGAN BERAGAM SCRIPT • FAST RESPON • SUPPORT 24 JAM •
+</span>
+<span>
+⚡ TOKO AMANAH DENGAN BERAGAM SCRIPT • FAST RESPON • SUPPORT 24 JAM •
+</span>
+<span>
+⚡ TOKO AMANAH DENGAN BERAGAM SCRIPT • FAST RESPON • SUPPORT 24 JAM •
+</span>
+</div>
+</div>
+
+</div>
+
+</section>
+<!-- ================= PRODUK ================= -->
+
+<main class="container" id="produk">
+
+<h2 class="section-title">
+Daftar Script Premium
+</h2>
+
+<div id="productList" class="product-grid"></div>
+
+</main>
+
+<!-- =========== SERVICE ========== -->
+<section id="service" class="service">
+
+<div class="service-header">
+<h2>Service Eksklusif</h2>
+<a onclick="scrollToTop()"class="service-btn">Pilih Produk</a>
+</div>
+
+<div class="service-card">
+
+<div class="service-icon">⚙️</div>
+
+<h3>Instalasi & Setup</h3>
+
+<p>
+Bantuan instalasi, konfigurasi, dan optimasi agar script
+langsung siap dipakai tanpa ribet.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">🔑</div>
+
+<h3>Aktivasi Instan</h3>
+
+<p>
+Proses aktivasi yang cepat dan transparan.
+Kami pandu sampai script kamu aktif sempurna.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">💬</div>
+
+<h3>VVIP Support</h3>
+
+<p>
+Layanan bantuan prioritas via discord untuk setiap kendala
+atau pertanyaan seputar produk kami.
+</p>
+
+</div>
+
+</section>
+
+<section class="testimonial" id="testiSection">
+
+<div class="testi-header">
+
+<h2>Apa Kata Mereka?</h2>
+
+<div class="testi-badge">
+<span class="dot"></span>
+1000+ Happy Customers
+</div>
+
+</div>
+
+
+<!-- CARD 1 -->
+<div class="testi-card">
+
+<div class="testi-user">
+
+<div class="avatar">N</div>
+
+<div class="testi-info">
+<div class="name">NapCloud Antama</div>
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+
+<p class="testi-text">
+"Script-nya bagus banget, update-nya gacor. Adminnya juga fast respon kalo ditanya-tanya."
+</p>
+
+</div>
+
+
+<!-- CARD 2 -->
+<div class="testi-card">
+
+<div class="testi-user">
+
+<div class="avatar">D</div>
+
+<div class="testi-info">
+<div class="name">Dian Dengdi</div>
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+
+<p class="testi-text">
+"Beli Custom Script prosesnya cuma 10-40 menit. Langsung bisa dipakai dan fiturnya bagus semua. Trusted!"
+</p>
+
+</div>
+
+
+<!-- CARD 3 -->
+<div class="testi-card">
+
+<div class="testi-user">
+
+<div class="avatar">M</div>
+
+<div class="testi-info">
+<div class="name">Maulana Wijaya</div>
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+
+<p class="testi-text">
+"Baru kali ini nemu seller yang ramah banget. Script Premium-nya murah tapi kualitas bintang 5."
+</p>
+
+</div>
+
+</section>
+
+<!--==============÷÷ FAQ ============== -->
+<section id="faq" class="faq-section">
+
+<div class="faq-header">
+
+<h2>FAQ</h2>
+
+<button onclick="scrollToTop()" class="faq-top">
+Kembali ke atas
+</button>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFaq(this)">
+<span>Bagaimana cara membeli?</span>
+<div class="faq-icon">+</div>
+</div>
+
+<div class="faq-answer">
+Pilih produk → klik Beli Sekarang → isi format → lanjut pembayaran QRIS → pilih status bayar → kirim → Chat admin.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFaq(this)">
+<span>Kenapa produk tidak muncul?</span>
+<div class="faq-icon">+</div>
+</div>
+
+<div class="faq-answer">
+Pastikan koneksi internet stabil dan refresh halaman.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFaq(this)">
+<span>Search bisa cari apa saja?</span>
+<div class="faq-icon">+</div>
+</div>
+
+<div class="faq-answer">
+Search bisa mencari nama produk atau kata dari deskripsi.
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div class="faq-question" onclick="toggleFaq(this)">
+<span>Metode pembayaran apa saja?</span>
+<div class="faq-icon">+</div>
+</div>
+
+<div class="faq-answer">
+Pembayaran hanya melalui QRIS
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DETAIL MODAL ================= -->
+
+<!-- ================= DETAIL MODAL ================= -->
+
+<div id="productModal" class="modal">
+
+<div class="modal-box detail-box">
+
+<div class="modal-header">
+Detail Produk
+</div>
+
+<div id="modalContent">
+
+<!-- FIREBASE AKAN ISI DISINI -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ============== BAGIAN FAQ ==========-->
+<footer class="footer">
+
+<div class="footer-card">
+
+<!-- HEADER -->
+<div class="footer-header">
+
+<img src="asset/logo.png" class="footer-logo">
+
+<div>
+<div class="footer-title">Dayy Store</div>
+<div class="footer-secure">SECURED PAYMENT BY</div>
+
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDG3AVFbVcxIyUxM2H-xr3JGNjcoj22xVwdI1gwLAFakZIB57H2IXxxWzYiDaEBH_2wBdjN80QZguHB_cClNf5t2PflfX0ju49xoVT3s0xbMFvxLdUcSvIZyfI4AZUbi9kQP-E8QT7E8AL/w1200-h630-p-k-no-nu/QRIS_logo.png" class="footer-payment">
+</div>
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div class="footer-section">
+
+<div class="footer-label">PRODUCTS</div>
+
+<div class="footer-link">Service & Custom Script</div>
+<div class="footer-link">Script Premium</div>
+
+</div>
+
+
+<!-- PROFILE -->
+
+<div class="footer-section">
+
+<div class="footer-label">PROFILE</div>
+
+<div class="footer-link">Tentang Kami</div>
+<div class="footer-link">Kontak</div>
+
+</div>
+
+
+<!-- SOCIAL -->
+
+<div class="footer-section">
+
+<div class="footer-label">SOCIAL MEDIA</div>
+
+<div class="footer-social">
+
+<a href="https://youtube.com/@dayygt?si=I5KpFXuniDk2WUHR" class="footer-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+YouTube
+</a>
+
+<a href="https://discord.gg/UpPJdb74vV" class="footer-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
+Discord
+</a>
+
+<a href="https://wa.me/+6282160324941" class="footer-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+WhatsApp
+</a>
+
+<a href="#" class="footer-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+TikTok
+</a>
+
+</div>
+
+</div>
+
+
+<hr class="footer-line">
+
+
+<!-- COPYRIGHT -->
+
+<div class="footer-copy">
+
+© Dayy Store 2022<span id="year"></span>
+
+</div>
+
+
+<!-- BADGES -->
+
+<div class="footer-badges">
+
+<div class="footer-badge">
+🛡 Secure Payment
+</div>
+
+<div class="footer-badge">
+⏱ 24/7 Support
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ================= FORM PEMBELIAN ================= -->
+
+<div id="buyModal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-header">
+Format Pembelian
+</div>
+
+
+<div class="form-group">
+
+<label>Nama Produk</label>
+
+<input id="formProduk" type="text" readonly>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Nama Discord / Nomor WhatsApp *</label>
+
+<input id="formKontak" type="text">
+
+<small class="form-error" id="errorKontak"></small>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Tanggal Order *</label>
+
+<input id="formTanggal" type="date">
+
+<small class="form-error" id="errorTanggal"></small>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Keterangan *</label>
+
+<textarea id="formKet"></textarea>
+
+<small class="form-error" id="errorKet"></small>
+
+</div>
+
+
+<div class="form-actions">
+
+<button class="btn-close" onclick="closeBuy()">
+Batal
+</button>
+
+<button class="btn-buy" onclick="submitOrder()">
+Lanjut Pembayaran
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= QRIS PAYMENT ================= -->
+
+<div id="qrisModal" class="modal">
+
+<div class="modal-box">
+
+<div class="modal-scroll">
+
+<div class="modal-header">
+Pembayaran QRIS
+<button class="close-btn" onclick="closeQris()">✕</button>
+</div>
+
+
+<div class="qris-content">
+
+<p class="qris-text">
+Silakan bayar sesuai nominal berikut
+</p>
+
+<div id="qrisHarga" class="qris-price">
+Rp 0
+</div>
+
+
+<div class="qris-note">
+
+<strong>⚠ QRIS NOTE</strong>
+
+<ul>
+<li>Tanyakan stok ke admin sebelum melakukan pembayaran.</li>
+<li>Jika stok tersedia, lakukan pembayaran QRIS.</li>
+<li>Setelah transfer klik tombol Kirim.</li>
+</ul>
+
+</div>
+
+
+<div class="qris-image">
+
+<img
+src="asset/qris.png"
+class="qris-img">
+
+</div>
+
+
+<p class="qris-step">
+Scan QRIS → lakukan pembayaran → klik “Kirim”
+</p>
+
+
+<div class="qris-actions">
+
+<button class="btn-secondary" onclick="openQrisImage()">
+Buka QRIS
+</button>
+
+<a
+href="https://wa.me/62xxxxxxxx"
+target="_blank"
+class="btn-secondary">
+Tanya stok
+</a>
+
+</div>
+
+
+<div class="qris-confirm">
+
+<div class="confirm-title">
+Apakah sudah bayar? *
+</div>
+
+<div class="radio-group">
+
+<label class="radio-box">
+<input type="radio" name="bayar" value="sudah" onchange="setBayarStatus('sudah')">
+Sudah
+</label>
+
+<label class="radio-box">
+<input type="radio" name="bayar" value="belum" onchange="setBayarStatus('belum')" checked>
+Belum
+</label>
+
+</div>
+
+</div>
+
+<div id="paymentSuccess" class="payment-success" style="display:none">
+✔ Pembayaran berhasil dikirim<br>
+Lanjut discord dan chat Admin!
+</div>
+
+<div class="form-actions">
+
+<button class="btn-close" onclick="closeQris()">
+Kembali
+</button>
+
+<button
+id="btnKirim"
+class="btn-buy disabled"
+onclick="kirimOrder()"
+disabled>
+Kirim
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= QRIS ZOOM ================= -->
+
+<div id="qrisZoom" class="modal">
+
+<div class="modal-box qris-zoom-box">
+
+<img src="asset/qris.png" class="qris-full">
+
+</div>
+
+</div>
+
+<div id="toastBox" class="toast-box">
+<span id="toastText"></span>
+</div>
+
+
+<!-- ================= FIREBASE ================= -->
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check-compat.js"></script>
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="firebase.js"></script>
+<script src="products.js"></script>
+<script src="ui.js"></script>
+
 </body>
 </html>

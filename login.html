@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+-webkit-tap-highlight-color:transparent;
+}
+
+body{
+background:#020617;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+padding:20px;
+}
+
+.login-card{
+width:100%;
+max-width:360px;
+background:#0f172a;
+padding:28px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.login-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:22px;
+text-align:center;
+}
+
+.input-group{
+margin-bottom:14px;
+}
+
+.input-group input{
+width:100%;
+padding:14px;
+border-radius:10px;
+background:#020617;
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+font-size:14px;
+transition:0.2s;
+}
+
+.input-group input:focus{
+outline:none;
+border:1px solid #3a5bff;
+}
+
+.login-btn{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:none;
+border-radius:12px;
+background:#3a5bff;
+color:white;
+font-weight:600;
+cursor:pointer;
+}
+
+.login-btn:active{
+opacity:0.9;
+}
+
+.error-text{
+margin-top:6px;
+font-size:13px;
+color:#ff6b6b;
+min-height:16px;
+}
+
+.login-error{
+margin-top:12px;
+font-size:13px;
+color:#ff6b6b;
+text-align:center;
+min-height:18px;
+}
+
+</style></head><body><div class="login-card"><div class="login-title">Login</div><div class="input-group">
+<input type="email" id="email" placeholder="Email">
+<div class="error-text" id="emailError"></div>
+</div><div class="input-group">
+<input type="password" id="password" placeholder="Password">
+<div class="error-text" id="passwordError"></div>
+</div><button class="login-btn" onclick="loginAdmin()">
+Login
+</button>
+
+<div class="login-error" id="loginError"></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-check-compat.js"></script>
+
+<script>
+
+const firebaseConfig = {
+apiKey: "AIzaSyD3DOjy_OpxmwRGIC-tDNdxXwpSFliJb-c",
+authDomain: "webs-50d23.firebaseapp.com",
+projectId: "webs-50d23",
+storageBucket: "webs-50d23.firebasestorage.app",
+messagingSenderId: "473965943790",
+appId: "1:473965943790:web:049b5ba5ede76656134cff"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+const appCheck = firebase.appCheck();
+
+appCheck.activate(
+"6LduqowsAAAAAPeiGV-6lCoGi--Z0q8DNFRxSgS1",
+true
+);
+
+function loginAdmin(){
+
+const email=document.getElementById("email").value.trim();
+const password=document.getElementById("password").value.trim();
+
+const emailError=document.getElementById("emailError");
+const passwordError=document.getElementById("passwordError");
+const loginError=document.getElementById("loginError");
+
+emailError.innerText="";
+passwordError.innerText="";
+loginError.innerText="";
+
+
+if(!email){
+emailError.innerText="Email wajib diisi";
+return;
+}
+
+if(!validateEmail(email)){
+emailError.innerText="Format email tidak valid";
+return;
+}
+
+if(!password){
+passwordError.innerText="Password wajib diisi";
+return;
+}
+
+
+auth.signInWithEmailAndPassword(email,password)
+
+.then(()=>{
+
+window.location.href="admin.html";
+
+})
+
+.catch((error)=>{
+
+console.log(error.code);
+
+if(error.code==="auth/user-not-found"){
+emailError.innerText="Email tidak terdaftar";
+}
+
+else if(error.code==="auth/wrong-password"){
+passwordError.innerText="Password salah";
+}
+
+else if(error.code==="auth/invalid-email"){
+emailError.innerText="Email tidak valid";
+}
+
+else if(error.code==="auth/invalid-login-credentials"){
+loginError.innerText="Email atau password salah";
+}
+
+else{
+loginError.innerText="Login gagal, coba lagi";
+}
+
+});
+
+}
+
+
+function validateEmail(email){
+
+const regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+return regex.test(email);
+
+}
+
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="Enter"){
+loginAdmin();
+}
+
+});
+
+</script></body>
+</html>
