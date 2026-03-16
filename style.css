@@ -1068,3 +1068,68 @@ cursor:pointer;
 .order-menu-dropdown button:hover{
 background:rgba(255,255,255,0.05);
 }
+
+/* ================= MOBILE (HP) ================= */
+
+@media (max-width: 768px){
+
+.container{
+padding:20px 14px;
+}
+
+.admin-content{
+padding:20px 14px;
+}
+
+.product-row{
+padding:14px 16px;
+border-radius:16px;
+}
+
+.product-left h3{
+font-size:16px;
+}
+
+.price-new{
+font-size:14px;
+}
+
+.desc-btn{
+font-size:12px;
+margin-top:4px;
+}
+
+.discount-badge{
+font-size:10px;
+padding:3px 8px;
+}
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 769px){
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px;
+}
+
+.admin-content{
+padding:40px;
+}
+
+.product-row{
+padding:22px 26px;
+}
+
+.product-left h3{
+font-size:20px;
+}
+
+.price-new{
+font-size:18px;
+}
+
+  }
